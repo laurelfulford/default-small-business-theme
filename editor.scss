@@ -173,8 +173,8 @@ Description: Used to style Gutenberg Blocks in the editor.
 
 .wp-block-freeform.block-library-rich-text__tinymce code {
 	background: $x-color-shade-gray-1;
-	border: none;
-	border-radius: 0;
+	color: $x-color-words-base;
+	padding: $x-space-sm;
 }
 
 /* Caption styles */
@@ -354,10 +354,12 @@ p.has-drop-cap:not(:focus)::first-letter {}
 	background: $x-color-shade-gray-1;
 	border: none;
 	border-radius: 0;
+	padding: $x-space-sm;
 }
 
-.wp-block-code textarea {
+.wp-block-code .editor-plain-text {
 	background: transparent;
+	color: $x-color-words-base;
 }
 
 /* Preformatted */
