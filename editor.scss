@@ -24,13 +24,13 @@ Description: Used to style Gutenberg Blocks in the editor.
 --------------------------------------------------------------*/
 
 .edit-post-visual-editor .editor-block-list__block,
-.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+.editor-default-block-appender textarea.editor-default-block-appender__content {
 	font-family: $x-font-family-body;
 }
 
 .edit-post-visual-editor .editor-block-list__block,
 .edit-post-visual-editor .editor-block-list__block p,
-.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+.editor-default-block-appender textarea.editor-default-block-appender__content {
 	line-height: $x-font-leading-body;
 	font-weight: 400;
 }
@@ -108,14 +108,14 @@ Description: Used to style Gutenberg Blocks in the editor.
 	color: $x-color-accent-base;
 	text-decoration: none;
 	@include link-underline();
-	
+
 	&:hover {
 		color: $x-color-primary-base;
 	}
 }
 
-/* 
-* General HTML selectors, used for the Classic Block 
+/*
+* General HTML selectors, used for the Classic Block
 */
 
 /* Table styles */
@@ -133,7 +133,7 @@ Description: Used to style Gutenberg Blocks in the editor.
 	tr:nth-child(even) {
 		background-color: $x-color-shade-gray-1;
 	}
-	
+
 	thead tr:nth-child(odd) {
 			background-color: $x-color-shade-gray-2;
 	}
@@ -185,7 +185,7 @@ Description: Used to style Gutenberg Blocks in the editor.
 	font-style: italic;
 }
 
-.wp-block-gallery .blocks-gallery-image figcaption, 
+.wp-block-gallery .blocks-gallery-image figcaption,
 .wp-block-gallery .blocks-gallery-item figcaption {
 	color: $x-color-shade-white;
 }
@@ -300,7 +300,7 @@ p.has-drop-cap:not(:focus)::first-letter {}
 	color: $x-color-secondary-base;
 	text-decoration: none;
 	@include link-underline();
-	
+
 	&:hover {
 		color: $x-color-primary-base;
 	}
@@ -432,7 +432,7 @@ p.has-drop-cap:not(:focus)::first-letter {}
 		padding: .5em;
 		text-align: left;
 	}
-	
+
 	tr:nth-child(even) {
 		background-color: $x-color-shade-gray-1;
 	}
@@ -492,7 +492,7 @@ p.has-drop-cap:not(:focus)::first-letter {}
 	margin-bottom: 1.5em;
 	padding: 0;
 	width: 100px;
-	
+
 	&.is-style-wide {
 		width: 100%;
 	}
@@ -503,10 +503,10 @@ p.has-drop-cap:not(:focus)::first-letter {}
 		width: auto;
 
 		&:before {
-			content: "\2666 \2666 \2666";
-			color: $x-color-words-subtle;
-			opacity: 0.5;
-			font-family: Arial,Helvetica,sans-serif;
+			content: "\00b7 \00b7 \00b7 \00b7 \00b7";
+			color: $x-color-shade-gray-4;
+			font-family: $body-font; /* family@include globalvar(font-family, body); */
+			font-size: $x-font-size-lg;
 			letter-spacing: 1em;
 			padding-left: 1em;
 		}
@@ -534,7 +534,7 @@ p.has-drop-cap:not(:focus)::first-letter {}
 }
 
 .wp-block-latest-comments.aligncenter.has-avatars {
-	
+
 	.wp-block-latest-comments__comment {
 		.wp-block-latest-comments__comment-excerpt,
 		.wp-block-latest-comments__comment-meta {
