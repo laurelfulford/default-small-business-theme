@@ -175,7 +175,12 @@ Description: Used to style Gutenberg Blocks in the editor.
 [class^="wp-block-"] figcaption {
 	color: $x-color-words-subtle;
 	font-size: $x-font-size-sm;
-	font-style: italic;
+	font-style: none;
+	text-align: left;
+}
+
+.rtl [class^="wp-block-"] figcaption {
+	text-align: right;
 }
 
 .wp-block-gallery .blocks-gallery-image figcaption,
@@ -204,7 +209,18 @@ Description: Used to style Gutenberg Blocks in the editor.
 
 p.has-drop-cap:not(:focus)::first-letter {}
 
+/* Image */
+
+[data-type="core/image"][data-align="center"] .wp-block-image figcaption {
+	text-align: center;
+}
+
+[data-type="core/image"][data-align="right"] .wp-block-image figcaption {
+	text-align: right;
+}
+
 /* Quote */
+
 .wp-block-quote {
 	background: $x-color-shade-gray-2;
 	border: none;
@@ -262,11 +278,10 @@ p.has-drop-cap:not(:focus)::first-letter {}
 /* Cover */
 
 .wp-block-cover {
-	background-color: $x-color-secondary-base;
-
 	.wp-block-cover-text {
-		a, a:hover {
-			color: $x-color-accent-base;
+		a,
+		a:hover {
+			color: inherit;
 		}
 	}
 }
