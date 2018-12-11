@@ -126,16 +126,9 @@ Description: Used to style Gutenberg Blocks in the editor.
 	td,
 	th {
 		border: 0;
+		border-top: 1px solid $x-color-border-base;
 		padding: .5em;
 		text-align: left;
-	}
-
-	tr:nth-child(even) {
-		background-color: $x-color-shade-gray-1;
-	}
-
-	thead tr:nth-child(odd) {
-			background-color: $x-color-shade-gray-2;
 	}
 }
 
@@ -345,6 +338,7 @@ p.has-drop-cap:not(:focus)::first-letter {}
 }
 
 .wp-block-verse pre {
+	color: $x-color-words-base;
 	padding: 0;
 }
 
@@ -431,16 +425,9 @@ p.has-drop-cap:not(:focus)::first-letter {}
 	td,
 	th {
 		border: 0;
-		padding: .5em;
+		border-top: 1px solid $x-color-border-base;
+		padding: 0;
 		text-align: left;
-	}
-
-	tr:nth-child(even) {
-		background-color: $x-color-shade-gray-1;
-	}
-
-	thead tr:nth-child(odd) {
-		background-color: $x-color-shade-gray-2;
 	}
 }
 
