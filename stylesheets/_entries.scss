@@ -8,32 +8,33 @@
 .entry-content,
 .entry-summary,
 .page-content {
-	
+
 	@include clearfix;
-	
+
 	@include media( tablet ) {
-		width: $x-grid-column-7;
+		width: $x-grid-column-7; // this isn't th e same as headers etc.
 	}
 
 	> *:not(.alignfull) {
-		margin: $x-space-sm;
-		max-width: calc( 100% - ( #{$x-space-sm} * 2 ) );
+		// margin: $x-space-sm;
+		margin-top: $x-space-sm;
+		margin-bottom: $x-space-sm;
+		// max-width: calc( 100% - ( #{$x-space-sm} * 2 ) ); // don't think this is needed.
 
 		&:first-child {
 			margin-top: 0;
 		}
 
-		@include media( tablet ) {
-			max-width: $x-grid-column-7;
-			margin-right: auto;
-			margin-left: auto;
+		@include media( tablet ) { // we do this with the container; we don't need to do it for all elements inside too
+		//	max-width: $x-grid-column-7;
+		//	margin-right: auto;
+		//	margin-left: auto;
 		}
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 		margin: $x-space-md auto !important;
 	}
-
 }
 
 .infinite-wrap .hentry:first-child,
@@ -45,7 +46,11 @@
 .hentry {
 	.entry-header {
 		background: url("shattered.png") repeat $x-color-secondary-base;
-		padding: 120px 0 $x-space-md;	
+		padding: 120px 0 $x-space-md;
+
+		@include media( tablet ) {
+			width: $x-grid-column-7; // this isn't th e same as headers etc.
+		}
 	}
 
 	.entry-meta {
@@ -60,6 +65,10 @@
 		a {
 			color: $x-color-words-subtle;
 			@include link_underline();
+		}
+
+		@include media( tablet ) {
+			width: $x-grid-column-7; // this isn't th e same as headers etc.
 		}
 	}
 
@@ -111,6 +120,10 @@
 				font-weight: 600;
 			}
 		}
+
+		@include media( tablet ) {
+			width: $x-grid-column-7; // this isn't th e same as headers etc.
+		}
 	}
 }
 
@@ -141,7 +154,8 @@
 			margin: 0 $x-space-sm;
 
 			@include media(tablet) {
-				margin: 0;
+				margin-left: auto;
+				margin-right: auto;
 			}
 		}
 
@@ -163,6 +177,16 @@
 				text-transform: uppercase;
 				font-size: $x-font-size-sm;
 				font-weight: 600;
+			}
+		}
+
+		.entry-content,
+		.entry-summary {
+			margin: 0 $x-space-sm;
+
+			@include media(tablet) {
+				margin-left: auto;
+				margin-right: auto;
 			}
 		}
 
@@ -189,17 +213,17 @@
 				font-size: $x-font-size-xxxl;
 				font-weight: 600;
 			}
-	
+
 			.entry-title,
 			.entry-meta {
 				color: $x-color-shade-white;
 				max-width: $x-grid-column-7;
 				margin-left: auto;
 				margin-right: auto;
-				text-align: center;	
+				text-align: center;
 
 				a {
-					color: $x-color-shade-white;				
+					color: $x-color-shade-white;
 				}
 			}
 		}
@@ -209,7 +233,7 @@
 			.wp-block-cover:first-child {
 				margin-top: 0;
 			}
-			
+
 			> *:first-child:not(.wp-block-cover) {
 				margin-top: $x-space-lg;
 			}
